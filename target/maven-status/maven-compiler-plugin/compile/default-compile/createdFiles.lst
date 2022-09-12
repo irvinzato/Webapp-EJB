@@ -1,3 +1,4 @@
+org\rivera\webapp\ejb\models\Producto.class
 org\rivera\webapp\ejb\service\ServiceEjb.class
 org\rivera\webapp\ejb\controllers\ServletEjemplo.class
 org\rivera\webapp\ejb\service\ServiceEjbLocal.class

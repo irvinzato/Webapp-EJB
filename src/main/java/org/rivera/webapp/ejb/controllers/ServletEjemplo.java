@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.rivera.webapp.ejb.models.Producto;
 import org.rivera.webapp.ejb.service.ServiceEjb;
 import org.rivera.webapp.ejb.service.ServiceEjbLocal;
 
@@ -37,9 +38,13 @@ public class ServletEjemplo extends HttpServlet {
       throw new RuntimeException(e);
     }
 
+    Producto p = service.create(new Producto("Uvas"));
+    System.out.println("Nuevo prodcuto " + p);
+
     System.out.println("¿Son iguales los servicios? " + service.equals(service2));
     req.setAttribute("saludo", service.greet("Irving"));
     req.setAttribute("saludo2", service2.greet("Mauricio"));
+    req.setAttribute("listado", service.toList());
     getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
   }
 }
