@@ -1,13 +1,12 @@
 package org.rivera.webapp.ejb.service;
 
 import jakarta.ejb.Stateful;
-import jakarta.ejb.Stateless;
 import jakarta.enterprise.context.RequestScoped;
 
 //@Stateless  //Es compartida por ser Stateless(Sin estado), la misma instancia para todos los usuarios
 @RequestScoped  //Tiene sentido ocuparlo junto con Stateful
 @Stateful   //Es propia(Con estado), diferentes instancias
-public class ServiceEjb {
+public class ServiceEjb implements ServiceEjbLocal {
 
   private int count;
 
